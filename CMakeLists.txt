@@ -26,8 +26,10 @@ set(DEEPMATCHING_SRC_FILES
 	${DEEPMATCHING_PATH}/pixel_desc.cpp
 	${DEEPMATCHING_PATH}/std.cpp)
 
-add_definitions(-DLIBDEEPMATCHING_HELPER_EXPORTS)
+set(CMAKE_DEBUG_POSTFIX "-debug")
 set(DEEPMATCHING_HELPER_FILES dm_helper.h dm_helper.cpp)
+
+add_definitions(-DLIBDEEPMATCHING_HELPER_EXPORTS)
 add_library("dm_helper" SHARED ${DEEPMATCHING_HEADER_FILES} ${DEEPMATCHING_SRC_FILES} ${DEEPMATCHING_HELPER_FILES})
 target_link_libraries("dm_helper")
 
